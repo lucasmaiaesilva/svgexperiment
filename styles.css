@@ -31,7 +31,7 @@ body { background: #34405e }
 }
 
 #credits a:hover {
-     color:#afe3ff;   
+     color:#afe3ff;
 }
 
 #credits a:visited {
@@ -50,14 +50,15 @@ body { background: #34405e }
 }
 
 #christmas {
-	width:550px;
-	height:550px;
+	max-width:500px;
+	max-height:500px;
 	display: block;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 30px;
 	cursor: pointer;
-  overflow: hidden;
-  border-radius: 50%;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* [Seting regular view] */
