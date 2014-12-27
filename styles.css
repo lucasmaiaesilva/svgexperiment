@@ -53,13 +53,13 @@ body { background: #34405e }
 	max-width:500px;
 	max-height:500px;
 	display: block;
-	margin: 0 auto;
-	margin-top: 30px;
+	margin: 30px auto 0;
 	cursor: pointer;
     overflow: hidden;
     border-radius: 50%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
 
 /* [Seting regular view] */
 #circleBackground, #windows, #door {
@@ -312,4 +312,22 @@ body { background: #34405e }
 #santa {
   transform: translateY(200px);
   transition: all .5s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+/*------------------------------*/
+
+
+/* [Mobile] */
+
+
+@media (max-width: 478px){
+    #christmas {
+        width: 250px;
+        margin:15px auto 0;
+    }
+
+    #message {
+        font-size: 2em;
+        margin-top: 20px;
+    }
 }
