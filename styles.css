@@ -56,6 +56,8 @@ body { background: #34405e }
 	margin: 0 auto;
 	margin-top: 50px;
 	cursor: pointer;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 /* [Seting regular view] */
@@ -63,8 +65,13 @@ body { background: #34405e }
 	fill:#21263C;
 }
 
-#ambient, #santa, #ground {
-	display:none;
+#ambient,
+#santa,
+#ground,
+#wayLeft,
+#wayRight,
+.st3 {
+	opacity: 0;
 }
 
 #house {
@@ -73,11 +80,17 @@ body { background: #34405e }
 
 /* [Seting a hover view] */
 #christmas:hover #ambient {
-	display:inline;
+	opacity: 1;
 }
 
-#christmas:hover #ground {
-	display:inline;
+#christmas:hover #ground,
+#christmas:hover #wayLeft,
+#christmas:hover #wayRight,
+#christmas.clicked #wayLeft,
+#christmas.clicked #wayRight,
+#christmas:hover .st3,
+#christmas.clicked .st3 {
+	opacity: 1;
 }
 
 #christmas:hover .backMountains {
@@ -94,7 +107,7 @@ body { background: #34405e }
 }
 
 #christmas:hover #leafs {
-	display:none;
+	opacity: 0;
 }
 
 
@@ -155,11 +168,11 @@ body { background: #34405e }
 /* [Seting clicked view] */
 
 #christmas.clicked #ambient {
-	display:inline;
+	opacity: 1;
 }
 
 #christmas.clicked #ground {
-	display:inline;
+	opacity: 1;
 }
 
 #christmas.clicked .backMountains {
@@ -176,7 +189,7 @@ body { background: #34405e }
 }
 
 #christmas.clicked #leafs {
-	display:none;
+	opacity: 0;
 }
 
 
@@ -232,22 +245,23 @@ body { background: #34405e }
 }
 
 #christmas.clicked #santa {
-	display: inline;
+	opacity: 1;
+  transform: translateY(0);
 }
 
-#christmas.clicked #body, .leftArm, .rightArm, #leftLeg, #rightLeg, #middleCap, #baseNose {
+#christmas #body, .leftArm, .rightArm, #leftLeg, #rightLeg, #middleCap, #baseNose {
 	fill:#DC2B26;
 }
 
-#christmas.clicked .leftHand, .rightHand, #face {
+#christmas .leftHand, .rightHand, #face {
 	fill:#FBC9BA;
 }
 
-#christmas.clicked #beard, #baseCap, #ballCap {
+#christmas #beard, #baseCap, #ballCap {
 	fill:#fff;
 }
 
-#chistmas.clicked #shaddowNose {
+#chistmas #shaddowNose {
 	fill:#F77F88;
 }
 
@@ -263,3 +277,38 @@ body { background: #34405e }
 	fill:#F5EF87;
 }
 
+/*------------------------------*/
+
+
+/* [Transitions] */
+
+#baseHouse,
+.st23,
+#door,
+#baseRoof,
+#shaddowRoof,
+#chimney { transition: all .3s ease; }
+
+.backMountains,
+#frontMountains {
+  transform: translateY(150px);
+  fill: transparent;
+}
+
+#christmas:hover #frontMountains { transition: all .4s ease; }
+#christmas:hover .backMountains { transition: all .4s .2s ease; }
+#christmas:hover #ground { transition: all .2s ease; }
+#christmas:hover .st3 { transition: all .3s .6s ease; }
+
+
+#christmas:hover .backMountains,
+#christmas.clicked .backMountains,
+#christmas:hover #frontMountains,
+#christmas.clicked #frontMountains {
+  transform: translateY(0);
+}
+
+#santa {
+  transform: translateY(200px);
+  transition: all .5s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
